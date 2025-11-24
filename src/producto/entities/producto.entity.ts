@@ -15,8 +15,8 @@ export class Producto {
   @Column()
   image: string;
 
-  @Column({ nullable: true })
-  color: string;
+  @Column("simple-array", { nullable: true })
+  color: string[];
 
   @Column({ nullable: true })
   marca: string;

@@ -1,5 +1,5 @@
 // create-producto.dto.ts
-import { IsString, IsNumber, IsOptional } from 'class-validator';
+import { IsString, IsNumber, IsOptional, IsArray } from 'class-validator';
 
 export class CreateProductoDto {
   @IsString()
@@ -12,8 +12,9 @@ export class CreateProductoDto {
   image: string;
 
   @IsOptional()
-  @IsString()
-  color?: string;
+  @IsArray()
+  @IsString({ each: true })
+  color?: string[];
 
   @IsOptional()
   @IsString()

@@ -1,13 +1,24 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
-@Entity()
+export enum UserRole {
+  ADMIN = 'ADMIN',
+}
+
+@Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column({ unique: true })
-  username: string;
+  username: string
 
-  @Column({ select: false })
-  password: string;
+  @Column()
+  password: string // hash bcrypt
+
+  @Column({
+    type: 'enum',
+    enum: UserRole,
+    default: UserRole.ADMIN,
+  })
+  role: UserRole
 }

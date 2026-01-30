@@ -16,6 +16,14 @@ export class CreatePedidoDto {
   @IsNotEmpty()
   numero_celular: string;
 
+   // 🔥 Opcional, default false
+  @IsOptional()
+  recojo_sucursal?: boolean;
+
+  // 🔥 Opcional, link de Google Maps
+  @IsOptional()
+  google_maps_link?: string;
+
   items: {
     productoId: number;
     cantidad: number;

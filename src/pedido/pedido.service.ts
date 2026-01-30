@@ -49,6 +49,8 @@ export class PedidoService {
             numero_celular: dto.numero_celular,
             total,
             detalles,
+            recojo_sucursal: dto.recojo_sucursal ?? false,
+            google_maps_link: dto.google_maps_link ?? undefined
         });
 
         return this.pedidoRepository.save(pedido);

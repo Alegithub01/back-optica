@@ -26,6 +26,14 @@ export class Pedido {
     @Column()
     numero_celular: string;
 
+     // 🔥 Nuevo: opción de recojo en sucursal
+    @Column({ default: false })
+    recojo_sucursal: boolean;
+
+    // 🔥 Nuevo: link de Google Maps
+    @Column({ nullable: true })
+    google_maps_link?: string;
+
     // 🔥 ESTADO DE PAGO
     @Column({
         type: 'enum',

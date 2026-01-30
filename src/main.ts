@@ -6,7 +6,9 @@ async function bootstrap() {
 
   // 🔥 HABILITAR CORS PARA TU FRONTEND
   app.enableCors({
-    origin: 'http://localhost:3000', 
+    origin: ['http://localhost:3000','http://76.13.171.103:3000',
+              'https://optica-nuevo-estilo.com',
+              'https://www.optica-nuevo-estilo.com'],
     methods: 'GET,POST,PATCH,DELETE',
     allowedHeaders: 'Content-Type, Authorization',
   });
